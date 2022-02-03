@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">My</string>
+    <string name="textview2">TextView</string>
+    <string name="next">next</string>
+    <string name="hello_world22">Hello World22!</string>
+    <string name="hello_world_33">hello world 33</string>
+    <string name="hello_world_4">hello world 4</string>
 </resources>

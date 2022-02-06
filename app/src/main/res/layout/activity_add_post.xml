@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4B9C95"
+    >
+
+    <TextView
+        android:id="@+id/tx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/adding_post_here"
+        android:textSize="35sp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        />
+
+    <EditText
+        android:id="@+id/ed_add_userId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tx"
+        android:layout_marginTop="50dp"
+        android:hint="@string/please_enter_userid"
+         />
+
+
+    <EditText
+        android:id="@+id/ed_add_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ed_add_userId"
+        android:hint="@string/please_enter_title_of_post" />
+
+    <EditText
+        android:id="@+id/ed_add_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ed_add_title"
+        android:hint="@string/please_enter_body_of_post"/>
+
+    <Button
+        android:id="@+id/bt_show_add_post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ed_add_body"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/black"
+        android:text="@string/show_post" />
+
+    <TextView
+        android:id="@+id/tx_show_userId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bt_show_add_post"
+        android:layout_marginTop="32dp" />
+
+
+    <TextView
+        android:id="@+id/tx_show_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tx_show_userId"
+        android:layout_marginTop="28dp" />
+
+    <TextView
+        android:id="@+id/tx_show_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tx_show_title"
+        android:layout_marginTop="28dp" />
+</RelativeLayout>

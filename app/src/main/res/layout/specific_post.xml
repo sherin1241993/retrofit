@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4B9C95"
+
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <EditText
+        android:id="@+id/edit_enter_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:hint="@string/please_enter_id_of_post"/>
+    <Button
+        android:id="@+id/bt_show_post"
+        android:layout_width="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:layout_below="@+id/edit_enter_id"
+        android:text="@string/show_post"/>
+
+    <TextView
+        android:id="@+id/tx_post_userId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/bt_show_post"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/tx_post_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tx_post_userId"
+        android:layout_marginTop="28dp"
+        android:textStyle="bold"
+         />
+
+    <TextView
+        android:id="@+id/tx_post_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tx_post_title"
+        android:layout_marginTop="50dp"
+        />
+
+
+</RelativeLayout>

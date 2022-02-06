@@ -1,6 +1,7 @@
 package com.example.my
 
 import android.telecom.Call
+import android.widget.EditText
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -10,10 +11,10 @@ interface ApiInterface {
     fun getData():retrofit2.Call<ArrayList<DefultResponse>>
 
     @GET("posts/{id}")
-     fun getUserPost(@Path("id")id :Int): retrofit2.Call<DefultResponse>
+     fun getPostById(@Path("id")id :Int): retrofit2.Call<DefultResponse>
 
     @GET("comments/")
-    fun getPostByQuery(@Query("postId")postId :Int):retrofit2.Call<ArrayList<specificComment>>
+    fun getCommentsByPostId(@Query("postId")postId :Int):retrofit2.Call<ArrayList<specificComment>>
 
     @FormUrlEncoded
     @POST("https://jsonplaceholder.typicode.com/posts")

@@ -3,9 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/CompuMarts/AndroidStudioProjects/My/app/src/main/res/drawable/specificpost.xml" value="0.2203125" />
+        <entry key="..\:/Users/CompuMarts/AndroidStudioProjects/My/app/src/main/res/layout/activity_add_post.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/CompuMarts/AndroidStudioProjects/My/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/CompuMarts/AndroidStudioProjects/My/app/src/main/res/layout/activity_recycler_book.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/CompuMarts/AndroidStudioProjects/My/app/src/main/res/layout/activity_recycler_posts.xml" value="0.22" />
+        <entry key="..\:/Users/CompuMarts/AndroidStudioProjects/My/app/src/main/res/layout/activity_recycler_row_posts.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/CompuMarts/AndroidStudioProjects/My/app/src/main/res/layout/recycler_comment.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/CompuMarts/AndroidStudioProjects/My/app/src/main/res/layout/recycler_row.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/CompuMarts/AndroidStudioProjects/My/app/src/main/res/layout/recycler_row_comment.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/CompuMarts/AndroidStudioProjects/My/app/src/main/res/layout/recycler_row_posts.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/CompuMarts/AndroidStudioProjects/My/app/src/main/res/layout/recycler_specific__comments.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/CompuMarts/AndroidStudioProjects/My/app/src/main/res/layout/specific_post.xml" value="0.11820652173913043" />
+        <entry key="..\:/Users/CompuMarts/AndroidStudioProjects/My/app/src/main/res/layout/specificcomments.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/CompuMarts/AndroidStudioProjects/My/app/src/main/res/layout/specificpost.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>

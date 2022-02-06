@@ -8,44 +8,50 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp">
 
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            android:background="#4B9C95"
+
+            >
 
             <TextView
-                android:id="@+id/tx_id"
+                android:id="@+id/tx_comment_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:text="TextView"
                 tools:ignore="HardcodedText" />
 
             <TextView
-                android:id="@+id/tx_title"
+                android:id="@+id/tx_comment_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tx_id"
+                android:layout_below="@+id/tx_comment_id"
                 android:layout_marginTop="28dp"
                 android:textStyle="bold"
-                android:text="@string/textview2"
                 tools:ignore="HardcodedText" />
 
             <TextView
-                android:id="@+id/tx_body"
+                android:id="@+id/tx_comment_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tx_title"
+                android:layout_below="@+id/tx_comment_name"
                 android:layout_marginTop="28dp"
-                android:text="@string/textview2"
+                android:textStyle="bold"
                 tools:ignore="HardcodedText" />
 
+            <TextView
+                android:id="@+id/tx_comment_body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tx_comment_email"
+                android:layout_marginTop="28dp"
+                tools:ignore="HardcodedText" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 

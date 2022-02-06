@@ -1,34 +1,26 @@
 package com.example.my
 
 import android.annotation.SuppressLint
-import android.content.Intent
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.Menu
-import android.view.MenuItem
 import android.widget.LinearLayout
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_recycler_posts.*
-import kotlinx.android.synthetic.main.recycler_row.*
+import kotlinx.android.synthetic.main.recycler_row_posts.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.moshi.MoshiConverterFactory
 
 class Recyclerposts : AppCompatActivity(){
     @SuppressLint("WrongConstant")
-    val posts = ArrayList<DefultResponse>()
 
 
-
-
-    @SuppressLint("WrongConstant")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler_posts)
@@ -51,7 +43,7 @@ class Recyclerposts : AppCompatActivity(){
             //base url
             .baseUrl(Basic_Url)
             //the type of converter
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(MoshiConverterFactory.create())
 
             //.client(okHttpClient)
             .build()

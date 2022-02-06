@@ -3,10 +3,9 @@ package com.example.my
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.recycler_row.view.*
+import kotlinx.android.synthetic.main.recycler_row_posts.view.*
 
 
 class CustomAdapter(val userList : ArrayList<DefultResponse>): RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
@@ -14,7 +13,7 @@ class CustomAdapter(val userList : ArrayList<DefultResponse>): RecyclerView.Adap
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
             val v =
-                LayoutInflater.from(parent.context).inflate(R.layout.recycler_row, parent, false)
+                LayoutInflater.from(parent.context).inflate(R.layout.recycler_row_posts, parent, false)
             return ViewHolder(v)
         }
 

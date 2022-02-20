@@ -10,12 +10,12 @@
     <string name="show_comments_by_postId">show comments by postId</string>
     <string name="please_enter_postId">please enter postId</string>
     <string name="show_comments">show comments</string>
-    <string name="please_enter_the_postId">Please enter the postId</string>
     <string name="please_enter_userid">please enter userId</string>
     <string name="please_enter_title_of_post">please enter title of post</string>
     <string name="please_enter_body_of_post">please enter body of post</string>
     <string name="adding_post_here">Add post </string>
     <string name="show_post">show post</string>
     <string name="welcome">Welcome</string>
-    <string name="add_post">add post</string>
+    <string name="change_language">change language</string>
+
 </resources>

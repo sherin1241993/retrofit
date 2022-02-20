@@ -12,22 +12,34 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:hint="@string/please_enter_id_of_post"/>
+        android:hint="@string/please_enter_id_of_post"
+        android:inputType="number"
+        android:minHeight="48dp" />
+
     <Button
         android:id="@+id/bt_show_post"
         android:layout_width="wrap_content"
-        android:layout_alignParentEnd="true"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
         android:layout_below="@+id/edit_enter_id"
-        android:text="@string/show_post"/>
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="35dp"
+        android:text="@string/show_post" />
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bt_show_post"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"
+        android:progress="0"
+        android:max="100"/>
 
     <TextView
         android:id="@+id/tx_post_userId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:layout_below="@+id/bt_show_post"
+        android:layout_below="@+id/progressBar"
         android:textStyle="bold"
         />
 

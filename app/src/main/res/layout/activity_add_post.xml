@@ -11,50 +11,60 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:text="@string/adding_post_here"
-        android:textSize="35sp"
         android:textAlignment="center"
-        android:textStyle="bold"
-        />
+        android:textSize="35sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/ed_add_userId"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_below="@+id/tx"
         android:layout_marginTop="50dp"
         android:hint="@string/please_enter_userid"
-         />
+        android:inputType="number" />
 
 
     <EditText
         android:id="@+id/ed_add_title"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_below="@+id/ed_add_userId"
-        android:hint="@string/please_enter_title_of_post" />
+        android:hint="@string/please_enter_title_of_post"
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/ed_add_body"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_below="@+id/ed_add_title"
-        android:hint="@string/please_enter_body_of_post"/>
+        android:hint="@string/please_enter_body_of_post"
+        android:inputType="text" />
 
     <Button
         android:id="@+id/bt_show_add_post"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ed_add_body"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentEnd="true"
         android:layout_marginTop="30dp"
-        android:textColor="@color/black"
-        android:text="@string/show_post" />
+        android:text="@string/show_post"
+        android:textColor="@color/black" />
+    <ProgressBar
+        android:id="@+id/progressBar3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bt_show_add_post"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"
+        android:progress="0"
+        android:max="100"/>
 
     <TextView
         android:id="@+id/tx_show_userId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/bt_show_add_post"
+        android:layout_below="@+id/progressBar3"
         android:layout_marginTop="32dp" />
 
 

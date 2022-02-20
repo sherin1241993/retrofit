@@ -1,5 +1,6 @@
 package com.example.my
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,14 +30,15 @@ class CustomAdapter(val userList : ArrayList<DefultResponse>): RecyclerView.Adap
         class ViewHolder(itemView: View, var my_data: DefultResponse? = null) :
             RecyclerView.ViewHolder(itemView) {
             // catch the element
-        fun bind(mydata : DefultResponse){
+            @SuppressLint("SetTextI18n")
+            fun bind(mydata : DefultResponse){
                 val postId = itemView.tx_id as TextView
                 val postTitle =itemView.tx_title as TextView
                 val postBody = itemView.tx_body as TextView
 
-                postId.text = mydata.userId.toString()
-                postTitle.text = mydata.title
-                postBody.text = mydata.body
+                postId.text ="post Id :"+ mydata.userId.toString()
+                postTitle.text ="title"+ mydata.title
+                postBody.text = "body"+ mydata.body
 
 
         }

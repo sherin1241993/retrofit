@@ -1,9 +1,12 @@
 package com.example.my
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_add_post.*
+import kotlinx.android.synthetic.main.specific_post.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -17,6 +20,8 @@ class AddPost : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_post)
         bt_show_add_post.setOnClickListener {
+            progressBar3.visibility = View.VISIBLE
+
             addPost(ed_add_userId.text.toString().toInt(),ed_add_title.text.toString(),ed_add_body.text.toString())
 
         }
@@ -32,11 +37,14 @@ class AddPost : AppCompatActivity() {
         //function at serviceapi
         val call = api.addingPost(userId,title, body)
         call.enqueue(object : Callback<PostUserPost> {
+            @SuppressLint("SetTextI18n")
             override fun onResponse(call: Call<PostUserPost>, response: Response<PostUserPost>) {
-                Toast.makeText(this@AddPost , response.body()?.title.toString(), Toast.LENGTH_SHORT).show()
-                    tx_show_userId.text =  response.body()?.userId.toString()
-                    tx_show_title.text =  response.body()?.title.toString()
-                    tx_show_body.text =  response.body()?.body.toString()
+
+                progressBar3.visibility = View.INVISIBLE
+
+                tx_show_userId.text = "userId :"+ response.body()?.userId.toString()
+                    tx_show_title.text = "Title"+ response.body()?.title.toString()
+                    tx_show_body.text = "body"+ response.body()?.body.toString()
 
 
 

@@ -8,7 +8,7 @@ import retrofit2.http.*
 interface ApiInterface {
     // notation
    @GET("posts")
-    fun getData():retrofit2.Call<ArrayList<DefultResponse>>
+    suspend fun getData():retrofit2.Response<List<DefultResponse>>
 
     @GET("posts/{id}")
      fun getPostById(@Path("id")id :Int): retrofit2.Call<DefultResponse>

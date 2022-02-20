@@ -7,33 +7,40 @@ import android.util.Log
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_recycler_posts.*
 import kotlinx.android.synthetic.main.recycler_row_posts.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
+import kotlinx.coroutines.*
+import retrofit2.*
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
+import kotlin.coroutines.CoroutineContext
 
-class Recyclerposts : AppCompatActivity(){
+class Recyclerposts : AppCompatActivity() {
+
+
+    @DelicateCoroutinesApi
     @SuppressLint("WrongConstant")
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler_posts)
 
 
-        recycler_posts.layoutManager = LinearLayoutManager(this , LinearLayout.VERTICAL,false)
-        //val adapter = CustomAdapter(ArrayList<DefultResponse>)
 
-        fitchAllPosts()
 
+               recycler_posts.layoutManager =
+                   LinearLayoutManager(this@Recyclerposts, LinearLayout.VERTICAL, false)
+               //val adapter = CustomAdapter(ArrayList<DefultResponse>)
+
+               fitchAllPosts()
 
     }
 
+    //using retrofit coroutines
+
+    @DelicateCoroutinesApi
     fun fitchAllPosts() {
 
         val Basic_Url = "https://jsonplaceholder.typicode.com/"
@@ -43,7 +50,47 @@ class Recyclerposts : AppCompatActivity(){
             //base url
             .baseUrl(Basic_Url)
             //the type of converter
-            .addConverterFactory(MoshiConverterFactory.create())
+            .addConverterFactory(MoshiConverterFactory.create(Moshi.Builder().add(
+                KotlinJsonAdapterFactory()).build()))
+
+            //.client(okHttpClient)
+            .build()
+            .create(ApiInterface::class.java)
+         //launching a new coroutine
+        GlobalScope.launch (Dispatchers.IO) {
+            val response = retrofit.getData()
+            withContext(Dispatchers.Main){
+            if (response.isSuccessful) {
+
+                val allData: ArrayList<DefultResponse>? =
+                    response.body() as ArrayList<DefultResponse>?
+                recycler_posts.adapter = allData?.let { CustomAdapter(it) }
+            }
+
+        }
+     }
+    }
+
+
+
+
+
+
+
+
+    /*
+    //using retrofit
+    fun fitchAllPosts() {
+
+        val Basic_Url = "https://jsonplaceholder.typicode.com/"
+
+        //make a retrofit variable
+        val retrofit = Retrofit.Builder()
+            //base url
+            .baseUrl(Basic_Url)
+            //the type of converter
+            .addConverterFactory(MoshiConverterFactory.create(Moshi.Builder().add(
+                KotlinJsonAdapterFactory()).build()))
 
             //.client(okHttpClient)
             .build()
@@ -52,16 +99,16 @@ class Recyclerposts : AppCompatActivity(){
         //retrofit.create(ApiInterface::class.java)
         val Api: ApiInterface = retrofit.create(ApiInterface::class.java)
         val call = Api.getData()
-        var item = call.enqueue(object : Callback<ArrayList<DefultResponse>> {
+        var item = call.enqueue(object : Callback<List<DefultResponse>> {
 
             override fun onResponse(
-                call: Call<ArrayList<DefultResponse>>,
-                response2: Response<ArrayList<DefultResponse>>
+                call: Call<List<DefultResponse>>,
+                response2: Response<List<DefultResponse>>
             ) {
                 if (response2.isSuccessful && response2!=null ) {
 
                     //show all data
-                    var allData: ArrayList<DefultResponse>? = response2.body()
+                    var allData: ArrayList<DefultResponse>? = response2.body() as ArrayList<DefultResponse>?
                     recycler_posts.adapter = allData?.let { CustomAdapter(it) }
 
                 }else {
@@ -71,7 +118,7 @@ class Recyclerposts : AppCompatActivity(){
                 }
             }
 
-            override fun onFailure(call: Call<ArrayList<DefultResponse>>, t: Throwable) {
+            override fun onFailure(call: Call<List<DefultResponse>>, t: Throwable) {
                 Toast.makeText(this@Recyclerposts, "غير متصل بالسيرفر ", Toast.LENGTH_SHORT).show()
             }
 
@@ -82,7 +129,7 @@ class Recyclerposts : AppCompatActivity(){
 
     }
 
-
+*/
 
 
     }

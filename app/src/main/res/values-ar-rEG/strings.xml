@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My</string>
+    <string name="textview2">TextView</string>
+    <string name="show_all_pots">كل المنشورات </string>
+    <string name="hello_world22">Hello World22!</string>
+    <string name="hello_world_33">hello world 33</string>
+    <string name="hello_world_4">hello world 4</string>
+    <string name="show_one_post">عرض منشور معين</string>
+    <string name="please_enter_id_of_post">برجاء ادخال ال id الخاص بالمنشور </string>
+    <string name="show_comments_by_postId">عرض التعليقات بال id الخاص بالمنشور</string>
+    <string name="please_enter_postId">برجاء ادخال id الخاص بالمنشور</string>
+    <string name="show_comments">عرض التعليقات</string>
+    <string name="please_enter_userid">برجاء ادخال ال id الخاص بالمستخدم </string>
+    <string name="please_enter_title_of_post">برجاء ادخال عنوان المنشور</string>
+    <string name="please_enter_body_of_post">برجاء ادخال محتوى المنشور</string>
+    <string name="adding_post_here">اضافة المنشور  </string>
+    <string name="show_post">عرض المنشور</string>
+    <string name="welcome">مرحبا</string>
+    <string name="change_language">تغيير اللغة</string>
+</resources>

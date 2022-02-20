@@ -3,9 +3,11 @@ package com.example.my
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.specific_post.*
 import retrofit2.Call
@@ -21,6 +23,7 @@ class SpecificPost :AppCompatActivity() {
         setContentView(R.layout.specific_post)
 
         bt_show_post.setOnClickListener {
+            progressBar.visibility = View.VISIBLE
             fitchPostWithPath(edit_enter_id.text.toString().toInt())
         }
 
@@ -54,6 +57,8 @@ class SpecificPost :AppCompatActivity() {
                 response: Response<DefultResponse>
             ) {
                 if (response.isSuccessful && response.body()!=null ) {
+
+                    progressBar.visibility = View.INVISIBLE
 
                     tx_post_userId.text = "userId :" + response.body()?.userId.toString()
                     tx_post_title.text = "title :"+ response.body()?.title.toString()
